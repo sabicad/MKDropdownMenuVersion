@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  NADropdownMenuFramework
+//
+//  Created by Yuriy Holovatskyi on 27.09.17.
+//  Copyright © 2017 Netatmo. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <UIKit/UIKit.h>
+
+#endif /* PrefixHeader_pch */
