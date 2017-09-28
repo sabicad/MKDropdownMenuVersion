@@ -11,12 +11,18 @@
 #import "UIColor+MKDropdownMenu.h"
 #import "MKDropdownMenuTableViewCell.h"
 #import "TitleSubtitleSelectableCell.h"
+#import "DropdownTitleHeaderView.h"
+#import "DropdownButtonFooterView.h"
+#import "NADropdownMenuFramework/NADropdownMenuFramework-Swift.h"
 
 static const CGFloat kDefaultRowHeight = 44;
 static const CGFloat kDefaultCornerRadius = 2;
-static const CGFloat kDefaultBackgroundDimmingOpacity = 0.2;
 static const CGFloat kShadowOpacity = 0.2;
 static NSString * const kCellIdentifier = @"cell";
+
+@interface MKDropdownMenuContentViewController () <DropdownButtonFooterViewDelegate>
+
+@end
 
 @implementation MKDropdownMenuContentViewController
 
@@ -35,8 +41,15 @@ static NSString * const kCellIdentifier = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithWhite:0.0 alpha:kDefaultBackgroundDimmingOpacity];
     self.view.clipsToBounds = YES;
+    
+    UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    
+    UIVisualEffectView *visualEffectView;
+    visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    
+    visualEffectView.frame = self.view.bounds;
+    [self.view addSubview:visualEffectView];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     tap.delegate = self;
@@ -75,22 +88,26 @@ static NSString * const kCellIdentifier = @"cell";
     self.tableView.delegate = self;
     self.tableView.rowHeight = kDefaultRowHeight;
     self.tableView.layoutMargins = UIEdgeInsetsZero;
-    self.tableView.separatorInset = UIEdgeInsetsZero;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    self.tableView.separatorColor = [UIColor mk_defaultSeparatorColor];
+//    self.tableView.separatorInset = UIEdgeInsetsZero;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.tableView.separatorColor = [UIColor colorWithRed:221.0/255 green:221.0/255 blue:221.0/255 alpha:1.0];
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     
     self.showsTopRowSeparator = YES;
     self.showsBottomRowSeparator = YES;
     
     NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
-    UINib *nib = [UINib nibWithNibName:@"TitleSubtitleSelectableCell" bundle:frameworkBundle];
     
+    UINib *nib = [UINib nibWithNibName:@"TitleSubtitleSelectableCell" bundle:frameworkBundle];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"TitleSubtitleSelectableCell"];
-    [self.tableView registerClass:[MKDropdownMenuTableViewCell class] forCellReuseIdentifier:kCellIdentifier];
+    
+//    [self.tableView registerClass:[MKDropdownMenuTableViewCell class] forCellReuseIdentifier:kCellIdentifier];
     
     UINib *headerNib = [UINib nibWithNibName:@"DropdownTitleHeaderView" bundle:frameworkBundle];
-    [self.tableView registerNib:headerNib forCellReuseIdentifier:@"DropdownTitleHeaderView"];
+    [self.tableView registerNib:headerNib forHeaderFooterViewReuseIdentifier:@"DropdownTitleHeaderView"];
+    
+    UINib *footerNib = [UINib nibWithNibName:@"DropdownButtonFooterView" bundle:frameworkBundle];
+    [self.tableView registerNib:footerNib forHeaderFooterViewReuseIdentifier:@"DropdownButtonFooterView"];
     
     // Shadow
     
@@ -325,7 +342,10 @@ static NSString * const kCellIdentifier = @"cell";
 }
 
 - (CGFloat)contentHeight {
-    return MIN(MAX(self.rowsCount * self.tableView.rowHeight, 0), self.maxHeight) + [self.delegate heightForHeader] + [self.delegate heightForFooter];
+    CGFloat footerheight = [self.delegate getConfigModel].footerHeight;
+    CGFloat headerheight = [self.delegate getConfigModel].titleHeight;
+    
+    return MIN(MAX(self.rowsCount * self.tableView.rowHeight, 0), self.maxHeight) + footerheight + headerheight;
 }
 
 - (void)setContentInset:(UIEdgeInsets)contentInset {
@@ -368,22 +388,6 @@ static NSString * const kCellIdentifier = @"cell";
 - (void)setSeparatorViewOffset:(UIOffset)separatorViewOffset {
     _separatorViewOffset = separatorViewOffset;
     [self updateSeparatorViewOffset];
-}
-
-- (void)setShowsTopRowSeparator:(BOOL)showsTopRowSeparator {
-    
-}
-
-- (BOOL)showsTopRowSeparator {
-    return YES;
-}
-
-- (void)setShowsBottomRowSeparator:(BOOL)showsBottomRowSeparator {
-    
-}
-
-- (BOOL)showsBottomRowSeparator {
-    return YES;
 }
 
 - (void)setShowsBorder:(BOOL)showsBorder {
@@ -432,21 +436,50 @@ static NSString * const kCellIdentifier = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TitleSubtitleSelectableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleSubtitleSelectableCell" forIndexPath:indexPath];
 
-    NSAttributedString *attributedTitle = [self.delegate attributedTitleForRow:indexPath.row];
-    [cell setAttributedTitle:attributedTitle];
+    InternalCell *intCell = [self.delegate getCellsModel][indexPath.row];
     
-    [cell setHighlightColor:self.highlightColor];
+    NSAttributedString *attrTitle = nil;
+    NSAttributedString *attrDescription = nil;
     
-    cell.backgroundColor = [self.delegate backgroundColorForRow:indexPath.row];
+    if (intCell) {
+        NSDictionary *attrTitleDict = @{NSFontAttributeName: intCell.titleFont,
+                                        NSForegroundColorAttributeName: intCell.titleColor};
+        NSDictionary *attrDescriptionDict = @{NSFontAttributeName: intCell.descriptionFont,
+                                        NSForegroundColorAttributeName: intCell.descriptionColor};
+        
+        attrTitle = [[NSAttributedString alloc] initWithString:intCell.title attributes:attrTitleDict];
+        attrDescription = [[NSAttributedString alloc] initWithString:intCell.descriptionText attributes:attrDescriptionDict];
+    }
+    
+    [cell setAttributedTitle:attrTitle];
+    [cell setAttributedDescription:attrDescription];
+    
+    [cell setHighlightColor:[UIColor clearColor]];
+    cell.backgroundColor = [self.delegate getConfigModel].cellsBackgroundColor;
+    
+    cell.iconImageView.image = intCell.image;
+    cell.iconImageView.hidden = !intCell.isSelected;
+    cell.separator.backgroundColor = [self.delegate getConfigModel].cellsSeparatorColor;
+    cell.tapHandler = intCell.tapHandler;
     
     cell.preservesSuperviewLayoutMargins = NO;
     cell.layoutMargins = UIEdgeInsetsZero;
-    cell.separatorInset = UIEdgeInsetsZero;
+    if (indexPath.row == _rowsCount - 1) {
+        cell.separator.hidden = YES;
+    } else {
+        cell.separator.hidden = NO;
+    }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    TitleSubtitleSelectableCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    if (cell && cell.tapHandler) {
+        cell.tapHandler();
+    }
+    
     [self.delegate didSelectRow:indexPath.row];
 }
 
@@ -455,19 +488,59 @@ static NSString * const kCellIdentifier = @"cell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return [self.delegate heightForHeader];
+    return [self.delegate getConfigModel].titleHeight;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return [self.delegate heightForFooter];
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:@"DropdownTitleHeaderView"];
+    return [self.delegate getConfigModel].footerHeight;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:@"DropdownTitleHeaderView"];
+    DropdownTitleHeaderView *header = (DropdownTitleHeaderView *)[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:@"DropdownTitleHeaderView"];
+
+    InternalTitle *title = [self.delegate getTitleModel];
+    
+    NSAttributedString *attr = nil;
+    
+    if (title) {
+        NSDictionary *attrDict = @{NSFontAttributeName: title.titleFont,
+                                   NSForegroundColorAttributeName: title.titleColor};
+        attr = [[NSAttributedString alloc] initWithString:title.title attributes:attrDict];
+    }
+    
+    [header setAttributedTitle:attr];
+    header.backgroundCellView.backgroundColor = [self.delegate getConfigModel].titleBackgroundColor;
+    header.separator.backgroundColor = [self.delegate getConfigModel].cellsSeparatorColor;
+    
+    return header;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    DropdownButtonFooterView *footer = (DropdownButtonFooterView *)[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:@"DropdownButtonFooterView"];
+    footer.delegate = self;
+    
+    InternalButton *button = [self.delegate getButtonModel];
+    
+    NSAttributedString *attr = nil;
+    
+    if (button) {
+        NSDictionary *attrDict = @{NSFontAttributeName: button.titleFont,
+                                   NSForegroundColorAttributeName: button.titleColor};
+        attr = [[NSAttributedString alloc] initWithString:button.title attributes:attrDict];
+    }
+    
+    [footer.cancelButton setAttributedTitle:attr forState:UIControlStateNormal];
+    footer.backgroundCellView.backgroundColor = [self.delegate getConfigModel].footerBackgroundColor;
+    footer.tapHandler = button.tapHandler;
+    footer.separator.backgroundColor = [self.delegate getConfigModel].cellsSeparatorColor;
+    
+    return footer;
+}
+
+#pragma mark - DropdownButtonFooterViewDelegate
+
+- (void)dropdownButtonFooterViewDelegateCancelAction {
+    [self.delegate cancelButtonAction];
 }
 
 @end

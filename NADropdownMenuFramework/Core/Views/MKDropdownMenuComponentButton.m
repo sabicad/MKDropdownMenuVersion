@@ -49,6 +49,7 @@ static UIImage *disclosureIndicatorImage = nil;
 
 - (void)setup {
     self.clipsToBounds = YES;
+    self.tintColor = [UIColor whiteColor];
     
     _containerView = [UIView new];
     _containerView.frame = self.bounds;

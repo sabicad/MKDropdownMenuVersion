@@ -1,0 +1,11 @@
+framework module NADropdownMenuFramework {
+  umbrella header "NADropdownMenuFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module NADropdownMenuFramework.Swift {
+    header "NADropdownMenuFramework-Swift.h"
+    requires objc
+}

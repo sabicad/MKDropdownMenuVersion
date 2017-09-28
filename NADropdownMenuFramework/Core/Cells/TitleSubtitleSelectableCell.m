@@ -19,6 +19,10 @@
     self.titleTextLabel.attributedText = attributedTitle;
 }
 
+- (void)setAttributedDescription:(NSAttributedString *)attributedDescription {
+    self.descriptionTextLabel.attributedText = attributedDescription;
+}
+
 - (void)setHighlightColor:(UIColor *)color {
     if (color != nil) {
         UIView *selectionView = [UIView new];

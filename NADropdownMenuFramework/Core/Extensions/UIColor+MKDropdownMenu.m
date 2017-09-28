@@ -17,5 +17,13 @@
     return [UIColor colorWithRed:68.0/255 green:68.0/255 blue:68.0/255 alpha:1.0];
 }
 
++ (UIColor *)appBlack68Alpha30 {
+    return [UIColor colorWithRed:68.0/255 green:68.0/255 blue:68.0/255 alpha:0.3];
+}
+
++ (UIColor *)appSeparato {
+    return [UIColor colorWithRed:221.0/255 green:221.0/255 blue:221.0/255 alpha:0.3];
+}
+
 @end
 

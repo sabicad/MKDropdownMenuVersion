@@ -22,12 +22,14 @@
 		D83DCCB61F7BDC6800889C94 /* TitleSubtitleSelectableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DCCB31F7BDC6800889C94 /* TitleSubtitleSelectableCell.xib */; };
 		D83DCCBA1F7BE58100889C94 /* DropdownTitleHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = D83DCCB81F7BE58100889C94 /* DropdownTitleHeaderView.h */; };
 		D83DCCBB1F7BE58100889C94 /* DropdownTitleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DCCB91F7BE58100889C94 /* DropdownTitleHeaderView.m */; };
-		D83DCCBD1F7BE59A00889C94 /* DrepdownTitleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DCCBC1F7BE59A00889C94 /* DrepdownTitleHeaderView.xib */; };
+		D83DCCBD1F7BE59A00889C94 /* DropdownTitleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DCCBC1F7BE59A00889C94 /* DropdownTitleHeaderView.xib */; };
+		D873D98C1F7CD956002135B2 /* DropdownButtonFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D873D98A1F7CD956002135B2 /* DropdownButtonFooterView.m */; };
+		D873D98D1F7CDBFF002135B2 /* DropdownButtonFooterView.h in Headers */ = {isa = PBXBuildFile; fileRef = D873D9891F7CD956002135B2 /* DropdownButtonFooterView.h */; };
+		D873D98E1F7CDC04002135B2 /* DropdownButtonFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D873D98B1F7CD956002135B2 /* DropdownButtonFooterView.xib */; };
 		D8F2C3501F7B9D9900799E6A /* NADropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C34F1F7B9D9900799E6A /* NADropdownMenu.swift */; };
 		D8F2C3511F7B9DED00799E6A /* MKDropdownMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C3371F7B9D9900799E6A /* MKDropdownMenuTableViewCell.m */; };
 		D8F2C3521F7B9DF000799E6A /* MKDropdownMenuTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F2C3381F7B9D9900799E6A /* MKDropdownMenuTableViewCell.h */; };
 		D8F2C3531F7B9DFB00799E6A /* UIColor+MKDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C33C1F7B9D9900799E6A /* UIColor+MKDropdownMenu.m */; };
-		D8F2C3541F7B9DFE00799E6A /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C33D1F7B9D9900799E6A /* UIFont+App.swift */; };
 		D8F2C3551F7B9E0100799E6A /* UIColor+MKDropdownMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F2C33E1F7B9D9900799E6A /* UIColor+MKDropdownMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8F2C3561F7B9E0700799E6A /* MKDropdownMenuContentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F2C3401F7B9D9900799E6A /* MKDropdownMenuContentViewController.h */; };
 		D8F2C3571F7B9E0900799E6A /* MKDropdownMenuContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C3411F7B9D9900799E6A /* MKDropdownMenuContentViewController.m */; };
@@ -37,11 +39,18 @@
 		D8F2C35B1F7B9E1B00799E6A /* MKDropdownMenuTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C3471F7B9D9900799E6A /* MKDropdownMenuTransition.m */; };
 		D8F2C35C1F7B9E2000799E6A /* MKDropdownMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F2C3481F7B9D9900799E6A /* MKDropdownMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8F2C35D1F7B9E2300799E6A /* MKDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C3391F7B9D9900799E6A /* MKDropdownMenu.m */; };
-		D8F2C35E1F7B9E2900799E6A /* Netatmo - Proxima Nova SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8F2C34B1F7B9D9900799E6A /* Netatmo - Proxima Nova SemiBold.otf */; };
-		D8F2C35F1F7B9E2C00799E6A /* Netatmo - Proxima Nova Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8F2C34C1F7B9D9900799E6A /* Netatmo - Proxima Nova Bold.otf */; };
-		D8F2C3601F7B9E2E00799E6A /* Netatmo - Proxima Nova Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8F2C34D1F7B9D9900799E6A /* Netatmo - Proxima Nova Light.otf */; };
-		D8F2C3611F7B9E3100799E6A /* Netatmo - Proxima Nova Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8F2C34E1F7B9D9900799E6A /* Netatmo - Proxima Nova Regular.otf */; };
 		D8F2C3641F7B9E8700799E6A /* PrefixHeader.pch in Headers */ = {isa = PBXBuildFile; fileRef = D8F2C3631F7B9E8400799E6A /* PrefixHeader.pch */; };
+		D8F737701F7D8057005835E6 /* InternalNavigationTitle.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F7376E1F7D8057005835E6 /* InternalNavigationTitle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8F737711F7D8057005835E6 /* InternalNavigationTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F7376F1F7D8057005835E6 /* InternalNavigationTitle.m */; };
+		D8F737741F7D806C005835E6 /* InternalTitle.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F737721F7D806C005835E6 /* InternalTitle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8F737751F7D806C005835E6 /* InternalTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F737731F7D806C005835E6 /* InternalTitle.m */; };
+		D8F737781F7D8078005835E6 /* InternalCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F737761F7D8078005835E6 /* InternalCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8F737791F7D8078005835E6 /* InternalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F737771F7D8078005835E6 /* InternalCell.m */; };
+		D8F7377C1F7D8086005835E6 /* InternalButton.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F7377A1F7D8086005835E6 /* InternalButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8F7377D1F7D8086005835E6 /* InternalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F7377B1F7D8086005835E6 /* InternalButton.m */; };
+		F2508C7D1F7DA50D00BD4C2A /* DropdownConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2508C7C1F7DA50D00BD4C2A /* DropdownConfig.swift */; };
+		F2508C801F7DA74400BD4C2A /* InternalConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = F2508C7E1F7DA74400BD4C2A /* InternalConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2508C811F7DA74400BD4C2A /* InternalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F2508C7F1F7DA74400BD4C2A /* InternalConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,12 +66,14 @@
 		D83DCCB31F7BDC6800889C94 /* TitleSubtitleSelectableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleSubtitleSelectableCell.xib; sourceTree = "<group>"; };
 		D83DCCB81F7BE58100889C94 /* DropdownTitleHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropdownTitleHeaderView.h; sourceTree = "<group>"; };
 		D83DCCB91F7BE58100889C94 /* DropdownTitleHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropdownTitleHeaderView.m; sourceTree = "<group>"; };
-		D83DCCBC1F7BE59A00889C94 /* DrepdownTitleHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrepdownTitleHeaderView.xib; sourceTree = "<group>"; };
+		D83DCCBC1F7BE59A00889C94 /* DropdownTitleHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownTitleHeaderView.xib; sourceTree = "<group>"; };
+		D873D9891F7CD956002135B2 /* DropdownButtonFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropdownButtonFooterView.h; sourceTree = "<group>"; };
+		D873D98A1F7CD956002135B2 /* DropdownButtonFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropdownButtonFooterView.m; sourceTree = "<group>"; };
+		D873D98B1F7CD956002135B2 /* DropdownButtonFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownButtonFooterView.xib; sourceTree = "<group>"; };
 		D8F2C3371F7B9D9900799E6A /* MKDropdownMenuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKDropdownMenuTableViewCell.m; sourceTree = "<group>"; };
 		D8F2C3381F7B9D9900799E6A /* MKDropdownMenuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKDropdownMenuTableViewCell.h; sourceTree = "<group>"; };
 		D8F2C3391F7B9D9900799E6A /* MKDropdownMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKDropdownMenu.m; sourceTree = "<group>"; };
 		D8F2C33C1F7B9D9900799E6A /* UIColor+MKDropdownMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MKDropdownMenu.m"; sourceTree = "<group>"; };
-		D8F2C33D1F7B9D9900799E6A /* UIFont+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+App.swift"; sourceTree = "<group>"; };
 		D8F2C33E1F7B9D9900799E6A /* UIColor+MKDropdownMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MKDropdownMenu.h"; sourceTree = "<group>"; };
 		D8F2C3401F7B9D9900799E6A /* MKDropdownMenuContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKDropdownMenuContentViewController.h; sourceTree = "<group>"; };
 		D8F2C3411F7B9D9900799E6A /* MKDropdownMenuContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKDropdownMenuContentViewController.m; sourceTree = "<group>"; };
@@ -71,12 +82,19 @@
 		D8F2C3461F7B9D9900799E6A /* MKDropdownMenuTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKDropdownMenuTransition.h; sourceTree = "<group>"; };
 		D8F2C3471F7B9D9900799E6A /* MKDropdownMenuTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKDropdownMenuTransition.m; sourceTree = "<group>"; };
 		D8F2C3481F7B9D9900799E6A /* MKDropdownMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKDropdownMenu.h; sourceTree = "<group>"; };
-		D8F2C34B1F7B9D9900799E6A /* Netatmo - Proxima Nova SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Netatmo - Proxima Nova SemiBold.otf"; sourceTree = "<group>"; };
-		D8F2C34C1F7B9D9900799E6A /* Netatmo - Proxima Nova Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Netatmo - Proxima Nova Bold.otf"; sourceTree = "<group>"; };
-		D8F2C34D1F7B9D9900799E6A /* Netatmo - Proxima Nova Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Netatmo - Proxima Nova Light.otf"; sourceTree = "<group>"; };
-		D8F2C34E1F7B9D9900799E6A /* Netatmo - Proxima Nova Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Netatmo - Proxima Nova Regular.otf"; sourceTree = "<group>"; };
 		D8F2C34F1F7B9D9900799E6A /* NADropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NADropdownMenu.swift; sourceTree = "<group>"; };
 		D8F2C3631F7B9E8400799E6A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D8F7376E1F7D8057005835E6 /* InternalNavigationTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternalNavigationTitle.h; sourceTree = "<group>"; };
+		D8F7376F1F7D8057005835E6 /* InternalNavigationTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InternalNavigationTitle.m; sourceTree = "<group>"; };
+		D8F737721F7D806C005835E6 /* InternalTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternalTitle.h; sourceTree = "<group>"; };
+		D8F737731F7D806C005835E6 /* InternalTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InternalTitle.m; sourceTree = "<group>"; };
+		D8F737761F7D8078005835E6 /* InternalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternalCell.h; sourceTree = "<group>"; };
+		D8F737771F7D8078005835E6 /* InternalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InternalCell.m; sourceTree = "<group>"; };
+		D8F7377A1F7D8086005835E6 /* InternalButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternalButton.h; sourceTree = "<group>"; };
+		D8F7377B1F7D8086005835E6 /* InternalButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InternalButton.m; sourceTree = "<group>"; };
+		F2508C7C1F7DA50D00BD4C2A /* DropdownConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownConfig.swift; sourceTree = "<group>"; };
+		F2508C7E1F7DA74400BD4C2A /* InternalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternalConfig.h; sourceTree = "<group>"; };
+		F2508C7F1F7DA74400BD4C2A /* InternalConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InternalConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +131,6 @@
 				D8F2C34F1F7B9D9900799E6A /* NADropdownMenu.swift */,
 				D836BD461F7B9D2F00D64376 /* NADropdownMenuFramework.h */,
 				D8F2C3651F7B9E8D00799E6A /* Support */,
-				D8F2C3491F7B9D9900799E6A /* Fonts */,
 			);
 			path = NADropdownMenuFramework;
 			sourceTree = "<group>";
@@ -143,7 +160,10 @@
 				D83DCCB31F7BDC6800889C94 /* TitleSubtitleSelectableCell.xib */,
 				D83DCCB81F7BE58100889C94 /* DropdownTitleHeaderView.h */,
 				D83DCCB91F7BE58100889C94 /* DropdownTitleHeaderView.m */,
-				D83DCCBC1F7BE59A00889C94 /* DrepdownTitleHeaderView.xib */,
+				D83DCCBC1F7BE59A00889C94 /* DropdownTitleHeaderView.xib */,
+				D873D9891F7CD956002135B2 /* DropdownButtonFooterView.h */,
+				D873D98A1F7CD956002135B2 /* DropdownButtonFooterView.m */,
+				D873D98B1F7CD956002135B2 /* DropdownButtonFooterView.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -151,10 +171,8 @@
 		D8F2C33A1F7B9D9900799E6A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D810E6B21F7BB7FE0042CB5B /* DropdownNavigationTitle.swift */,
-				D810E6B41F7BB88E0042CB5B /* DropdownTitle.swift */,
-				D810E6B61F7BB8A30042CB5B /* DropdownCell.swift */,
-				D810E6B81F7BB8C30042CB5B /* DropdownButton.swift */,
+				D8F7376C1F7D800E005835E6 /* External */,
+				D8F7376D1F7D8016005835E6 /* Internal */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,7 +182,6 @@
 			children = (
 				D8F2C33E1F7B9D9900799E6A /* UIColor+MKDropdownMenu.h */,
 				D8F2C33C1F7B9D9900799E6A /* UIColor+MKDropdownMenu.m */,
-				D8F2C33D1F7B9D9900799E6A /* UIFont+App.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -196,25 +213,6 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
-		D8F2C3491F7B9D9900799E6A /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				D8F2C34A1F7B9D9900799E6A /* Proxima Nova */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		D8F2C34A1F7B9D9900799E6A /* Proxima Nova */ = {
-			isa = PBXGroup;
-			children = (
-				D8F2C34B1F7B9D9900799E6A /* Netatmo - Proxima Nova SemiBold.otf */,
-				D8F2C34C1F7B9D9900799E6A /* Netatmo - Proxima Nova Bold.otf */,
-				D8F2C34D1F7B9D9900799E6A /* Netatmo - Proxima Nova Light.otf */,
-				D8F2C34E1F7B9D9900799E6A /* Netatmo - Proxima Nova Regular.otf */,
-			);
-			path = "Proxima Nova";
-			sourceTree = "<group>";
-		};
 		D8F2C3651F7B9E8D00799E6A /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +220,35 @@
 				D8F2C3631F7B9E8400799E6A /* PrefixHeader.pch */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		D8F7376C1F7D800E005835E6 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D810E6B21F7BB7FE0042CB5B /* DropdownNavigationTitle.swift */,
+				D810E6B41F7BB88E0042CB5B /* DropdownTitle.swift */,
+				D810E6B61F7BB8A30042CB5B /* DropdownCell.swift */,
+				D810E6B81F7BB8C30042CB5B /* DropdownButton.swift */,
+				F2508C7C1F7DA50D00BD4C2A /* DropdownConfig.swift */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		D8F7376D1F7D8016005835E6 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				D8F7376E1F7D8057005835E6 /* InternalNavigationTitle.h */,
+				D8F7376F1F7D8057005835E6 /* InternalNavigationTitle.m */,
+				D8F737721F7D806C005835E6 /* InternalTitle.h */,
+				D8F737731F7D806C005835E6 /* InternalTitle.m */,
+				D8F737761F7D8078005835E6 /* InternalCell.h */,
+				D8F737771F7D8078005835E6 /* InternalCell.m */,
+				D8F7377A1F7D8086005835E6 /* InternalButton.h */,
+				D8F7377B1F7D8086005835E6 /* InternalButton.m */,
+				F2508C7E1F7DA74400BD4C2A /* InternalConfig.h */,
+				F2508C7F1F7DA74400BD4C2A /* InternalConfig.m */,
+			);
+			path = Internal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,20 +259,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				D810E6BF1F7BC6A80042CB5B /* NADropdownMenu.swift in Headers */,
-				D8F2C3641F7B9E8700799E6A /* PrefixHeader.pch in Headers */,
 				D8F2C3551F7B9E0100799E6A /* UIColor+MKDropdownMenu.h in Headers */,
 				D8F2C35C1F7B9E2000799E6A /* MKDropdownMenu.h in Headers */,
-				D83DCCB41F7BDC6800889C94 /* TitleSubtitleSelectableCell.h in Headers */,
 				D83DCC7D1F7BCB9D00889C94 /* DropdownNavigationTitle.swift in Headers */,
 				D83DCC7E1F7BCB9D00889C94 /* DropdownTitle.swift in Headers */,
 				D83DCC7F1F7BCB9D00889C94 /* DropdownCell.swift in Headers */,
 				D83DCC801F7BCB9D00889C94 /* DropdownButton.swift in Headers */,
-				D8F2C3521F7B9DF000799E6A /* MKDropdownMenuTableViewCell.h in Headers */,
-				D8F2C35A1F7B9E1900799E6A /* MKDropdownMenuTransition.h in Headers */,
+				D8F7377C1F7D8086005835E6 /* InternalButton.h in Headers */,
+				D8F737741F7D806C005835E6 /* InternalTitle.h in Headers */,
+				D8F737781F7D8078005835E6 /* InternalCell.h in Headers */,
+				D8F737701F7D8057005835E6 /* InternalNavigationTitle.h in Headers */,
+				F2508C801F7DA74400BD4C2A /* InternalConfig.h in Headers */,
 				D836BD481F7B9D2F00D64376 /* NADropdownMenuFramework.h in Headers */,
-				D8F2C3591F7B9E1000799E6A /* MKDropdownMenuComponentButton.h in Headers */,
 				D83DCCBA1F7BE58100889C94 /* DropdownTitleHeaderView.h in Headers */,
+				D8F2C3521F7B9DF000799E6A /* MKDropdownMenuTableViewCell.h in Headers */,
 				D8F2C3561F7B9E0700799E6A /* MKDropdownMenuContentViewController.h in Headers */,
+				D8F2C3591F7B9E1000799E6A /* MKDropdownMenuComponentButton.h in Headers */,
+				D8F2C35A1F7B9E1900799E6A /* MKDropdownMenuTransition.h in Headers */,
+				D873D98D1F7CDBFF002135B2 /* DropdownButtonFooterView.h in Headers */,
+				D83DCCB41F7BDC6800889C94 /* TitleSubtitleSelectableCell.h in Headers */,
+				D8F2C3641F7B9E8700799E6A /* PrefixHeader.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,11 +342,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D83DCCB61F7BDC6800889C94 /* TitleSubtitleSelectableCell.xib in Resources */,
-				D83DCCBD1F7BE59A00889C94 /* DrepdownTitleHeaderView.xib in Resources */,
-				D8F2C3611F7B9E3100799E6A /* Netatmo - Proxima Nova Regular.otf in Resources */,
-				D8F2C35F1F7B9E2C00799E6A /* Netatmo - Proxima Nova Bold.otf in Resources */,
-				D8F2C3601F7B9E2E00799E6A /* Netatmo - Proxima Nova Light.otf in Resources */,
-				D8F2C35E1F7B9E2900799E6A /* Netatmo - Proxima Nova SemiBold.otf in Resources */,
+				D83DCCBD1F7BE59A00889C94 /* DropdownTitleHeaderView.xib in Resources */,
+				D873D98E1F7CDC04002135B2 /* DropdownButtonFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,16 +354,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F737791F7D8078005835E6 /* InternalCell.m in Sources */,
 				D8F2C3571F7B9E0900799E6A /* MKDropdownMenuContentViewController.m in Sources */,
+				F2508C7D1F7DA50D00BD4C2A /* DropdownConfig.swift in Sources */,
+				D8F737751F7D806C005835E6 /* InternalTitle.m in Sources */,
 				D8F2C3581F7B9E0E00799E6A /* MKDropdownMenuComponentButton.m in Sources */,
-				D8F2C3541F7B9DFE00799E6A /* UIFont+App.swift in Sources */,
+				D8F7377D1F7D8086005835E6 /* InternalButton.m in Sources */,
+				D8F737711F7D8057005835E6 /* InternalNavigationTitle.m in Sources */,
 				D8F2C3501F7B9D9900799E6A /* NADropdownMenu.swift in Sources */,
 				D8F2C3511F7B9DED00799E6A /* MKDropdownMenuTableViewCell.m in Sources */,
+				F2508C811F7DA74400BD4C2A /* InternalConfig.m in Sources */,
 				D810E6B71F7BB8A30042CB5B /* DropdownCell.swift in Sources */,
 				D83DCCB51F7BDC6800889C94 /* TitleSubtitleSelectableCell.m in Sources */,
 				D83DCCBB1F7BE58100889C94 /* DropdownTitleHeaderView.m in Sources */,
 				D8F2C35D1F7B9E2300799E6A /* MKDropdownMenu.m in Sources */,
 				D8F2C35B1F7B9E1B00799E6A /* MKDropdownMenuTransition.m in Sources */,
+				D873D98C1F7CD956002135B2 /* DropdownButtonFooterView.m in Sources */,
 				D810E6B91F7BB8C30042CB5B /* DropdownButton.swift in Sources */,
 				D810E6B31F7BB7FE0042CB5B /* DropdownNavigationTitle.swift in Sources */,
 				D8F2C3531F7B9DFB00799E6A /* UIColor+MKDropdownMenu.m in Sources */,
@@ -470,6 +506,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NADropdownMenuFramework/Support/PrefixHeader.pch;
 				INFOPLIST_FILE = NADropdownMenuFramework/Support/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -500,6 +537,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NADropdownMenuFramework/Support/PrefixHeader.pch;
 				INFOPLIST_FILE = NADropdownMenuFramework/Support/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

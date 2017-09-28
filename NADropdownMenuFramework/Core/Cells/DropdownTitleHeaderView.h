@@ -11,5 +11,9 @@
 @interface DropdownTitleHeaderView : UITableViewHeaderFooterView
 
 @property (weak, nonatomic) IBOutlet UILabel *headerTextLabel;
+@property (weak, nonatomic) IBOutlet UIView *backgroundCellView;
+@property (weak, nonatomic) IBOutlet UIView *separator;
+
+- (void)setAttributedTitle:(NSAttributedString *)attributedTitle;
 
 @end

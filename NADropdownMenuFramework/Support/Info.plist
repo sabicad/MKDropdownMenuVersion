@@ -20,12 +20,5 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Netatmo - Proxima Nova SemiBold.otf</string>
-		<string>Netatmo - Proxima Nova Regular.otf</string>
-		<string>Netatmo - Proxima Nova Light.otf</string>
-		<string>Netatmo - Proxima Nova Bold.otf</string>
-	</array>
 </dict>
 </plist>

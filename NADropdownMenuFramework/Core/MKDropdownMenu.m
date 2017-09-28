@@ -701,22 +701,6 @@ static NSString * const kCellIdentifier = @"cell";
 
 #pragma mark - DropdownMenuContentViewControllerDelegate
 
-- (CGFloat)heightForHeader {
-    if ([self.delegate respondsToSelector:@selector(dropdownMenu:headerHeightForComponent:)]) {
-        return [self.delegate dropdownMenu:self headerHeightForComponent:self.selectedComponent];
-    }
-    
-    return 0.1;
-}
-
-- (CGFloat)heightForFooter {
-    if ([self.delegate respondsToSelector:@selector(dropdownMenu:footerHeightForComponent:)]) {
-        return [self.delegate dropdownMenu:self footerHeightForComponent:self.selectedComponent];
-    }
-    
-    return 0.1;
-}
-
 - (NSInteger)numberOfRows {
     if (self.selectedComponent == NSNotFound) {
         return 0;
@@ -737,55 +721,20 @@ static NSString * const kCellIdentifier = @"cell";
     return MAX(0, maxRows);
 }
 
-- (NSAttributedString *)attributedTitleForRow:(NSInteger)row {
-    NSAttributedString *attributedTitle = nil;
-    
-    if ([self.delegate respondsToSelector:@selector(dropdownMenu:attributedTitleForRow:forComponent:)]) {
-        attributedTitle = [self.delegate dropdownMenu:self attributedTitleForRow:row forComponent:self.selectedComponent];
-    }
-    
-    if (attributedTitle == nil && [self.delegate respondsToSelector:@selector(dropdownMenu:titleForRow:forComponent:)]) {
-        NSString *title = [self.delegate dropdownMenu:self titleForRow:row forComponent:self.selectedComponent];
-        if (title != nil) {
-            attributedTitle = [[NSAttributedString alloc] initWithString:title];
-        }
-    }
-    
-    return attributedTitle;
+- (InternalTitle *)getTitleModel {
+    return _internalTitle;
 }
 
-- (UIView *)customViewForRow:(NSInteger)row reusingView:(UIView *)view {
-    UIView *customView = nil;
-    
-    if ([self.delegate respondsToSelector:@selector(dropdownMenu:viewForRow:forComponent:reusingView:)]) {
-        customView = [self.delegate dropdownMenu:self viewForRow:row forComponent:self.selectedComponent reusingView:view];
-    }
-    
-    return customView;
+- (NSMutableArray<InternalCell *> *)getCellsModel {
+    return _internalCells;
 }
 
-- (UIView *)accessoryViewForRow:(NSInteger)row {
-    UIView *accessoryView = nil;
-    
-    if ([self.delegate respondsToSelector:@selector(dropdownMenu:accessoryViewForRow:forComponent:)]) {
-        accessoryView = [self.delegate dropdownMenu:self accessoryViewForRow:row forComponent:self.selectedComponent];
-    }
-    
-    return accessoryView;
+- (InternalButton *)getButtonModel {
+    return _internalButton;
 }
 
-- (UIColor *)backgroundColorForRow:(NSInteger)row {
-    UIColor *backgroundColor = nil;
-    
-    if ([self.delegate respondsToSelector:@selector(dropdownMenu:backgroundColorForRow:forComponent:)]) {
-        backgroundColor = [self.delegate dropdownMenu:self backgroundColorForRow:row forComponent:self.selectedComponent];
-    }
-    
-    if (backgroundColor == nil) {
-        backgroundColor = [UIColor clearColor];
-    }
-    
-    return backgroundColor;
+- (InternalConfig *)getConfigModel {
+    return _internalConfig;
 }
 
 - (void)didSelectRow:(NSInteger)row {
@@ -810,6 +759,10 @@ static NSString * const kCellIdentifier = @"cell";
         [self cleanupSelectedComponents];
         [self updateComponentButtonsSelection:NO];
     }
+}
+
+- (void)cancelButtonAction {
+    [self closeAllComponentsAnimated:YES];
 }
 
 @end

@@ -11,15 +11,14 @@
 
 - (NSInteger)numberOfRows;
 - (NSInteger)maximumNumberOfRows;
-- (NSAttributedString *)attributedTitleForRow:(NSInteger)row;
-- (UIView *)customViewForRow:(NSInteger)row reusingView:(UIView *)view;
-- (UIView *)accessoryViewForRow:(NSInteger)row;
-- (UIColor *)backgroundColorForRow:(NSInteger)row;
 - (void)didSelectRow:(NSInteger)row;
 - (void)didDeselectRow:(NSInteger)row;
 - (void)willDisappear;
-- (CGFloat)heightForHeader;
-- (CGFloat)heightForFooter;
+- (void)cancelButtonAction;
+- (InternalTitle *)getTitleModel;
+- (NSMutableArray<InternalCell *> *)getCellsModel;
+- (InternalButton *)getButtonModel;
+- (InternalConfig *)getConfigModel;
 
 @end
 
