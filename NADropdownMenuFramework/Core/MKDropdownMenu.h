@@ -22,12 +22,12 @@
  SOFTWARE.
  */
 
+@class DropdownTitle;
+@class DropdownCell;
+@class DropdownButton;
+@class DropdownConfig;
+
 typedef void(^ButtonHandlerBlock)(void);
-#import "InternalNavigationTitle.h"
-#import "InternalTitle.h"
-#import "InternalCell.h"
-#import "InternalButton.h"
-#import "InternalConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -122,10 +122,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// The currently expanded component. NSNotFound when no components are selected.
 @property (readonly, nonatomic) NSInteger selectedComponent;
 
-@property (strong, nonatomic) InternalTitle *internalTitle;
-@property (strong, nonatomic) NSMutableArray <InternalCell *> *internalCells;
-@property (strong, nonatomic) InternalButton *internalButton;
-@property (strong, nonatomic) InternalConfig *internalConfig;
+@property (strong, nonatomic) DropdownTitle *internalTitle;
+@property (strong, nonatomic) NSArray <DropdownCell *> *internalCells;
+@property (strong, nonatomic) DropdownButton *internalButton;
+@property (strong, nonatomic) DropdownConfig *internalConfig;
 
 /// The number of components in the dropdown (cached from the data source).
 - (NSInteger)numberOfComponents;

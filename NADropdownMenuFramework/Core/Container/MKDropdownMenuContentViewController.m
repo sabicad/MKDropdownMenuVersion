@@ -13,6 +13,7 @@
 #import "TitleSubtitleSelectableCell.h"
 #import "DropdownTitleHeaderView.h"
 #import "DropdownButtonFooterView.h"
+
 #import "NADropdownMenuFramework/NADropdownMenuFramework-Swift.h"
 
 static const CGFloat kDefaultRowHeight = 44;
@@ -436,7 +437,7 @@ static NSString * const kCellIdentifier = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TitleSubtitleSelectableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleSubtitleSelectableCell" forIndexPath:indexPath];
 
-    InternalCell *intCell = [self.delegate getCellsModel][indexPath.row];
+    DropdownCell *intCell = [self.delegate getCellsModel][indexPath.row];
     
     NSAttributedString *attrTitle = nil;
     NSAttributedString *attrDescription = nil;
@@ -498,7 +499,7 @@ static NSString * const kCellIdentifier = @"cell";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     DropdownTitleHeaderView *header = (DropdownTitleHeaderView *)[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:@"DropdownTitleHeaderView"];
 
-    InternalTitle *title = [self.delegate getTitleModel];
+    DropdownTitle *title = [self.delegate getTitleModel];
     
     NSAttributedString *attr = nil;
     
@@ -519,7 +520,7 @@ static NSString * const kCellIdentifier = @"cell";
     DropdownButtonFooterView *footer = (DropdownButtonFooterView *)[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:@"DropdownButtonFooterView"];
     footer.delegate = self;
     
-    InternalButton *button = [self.delegate getButtonModel];
+    DropdownButton *button = [self.delegate getButtonModel];
     
     NSAttributedString *attr = nil;
     
@@ -531,7 +532,7 @@ static NSString * const kCellIdentifier = @"cell";
     
     [footer.cancelButton setAttributedTitle:attr forState:UIControlStateNormal];
     footer.backgroundCellView.backgroundColor = [self.delegate getConfigModel].footerBackgroundColor;
-    footer.tapHandler = button.tapHandler;
+    footer.tapHandler = button.buttonHandler;
     footer.separator.backgroundColor = [self.delegate getConfigModel].cellsSeparatorColor;
     
     return footer;

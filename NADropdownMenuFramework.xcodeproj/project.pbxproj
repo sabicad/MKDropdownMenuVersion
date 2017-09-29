@@ -35,17 +35,7 @@
 		D8F2C35C1F7B9E2000799E6A /* MKDropdownMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F2C3481F7B9D9900799E6A /* MKDropdownMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8F2C35D1F7B9E2300799E6A /* MKDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C3391F7B9D9900799E6A /* MKDropdownMenu.m */; };
 		D8F2C3641F7B9E8700799E6A /* PrefixHeader.pch in Headers */ = {isa = PBXBuildFile; fileRef = D8F2C3631F7B9E8400799E6A /* PrefixHeader.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8F737701F7D8057005835E6 /* InternalNavigationTitle.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F7376E1F7D8057005835E6 /* InternalNavigationTitle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8F737711F7D8057005835E6 /* InternalNavigationTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F7376F1F7D8057005835E6 /* InternalNavigationTitle.m */; };
-		D8F737741F7D806C005835E6 /* InternalTitle.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F737721F7D806C005835E6 /* InternalTitle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8F737751F7D806C005835E6 /* InternalTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F737731F7D806C005835E6 /* InternalTitle.m */; };
-		D8F737781F7D8078005835E6 /* InternalCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F737761F7D8078005835E6 /* InternalCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8F737791F7D8078005835E6 /* InternalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F737771F7D8078005835E6 /* InternalCell.m */; };
-		D8F7377C1F7D8086005835E6 /* InternalButton.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F7377A1F7D8086005835E6 /* InternalButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8F7377D1F7D8086005835E6 /* InternalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F7377B1F7D8086005835E6 /* InternalButton.m */; };
 		F2508C7D1F7DA50D00BD4C2A /* DropdownConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2508C7C1F7DA50D00BD4C2A /* DropdownConfig.swift */; };
-		F2508C801F7DA74400BD4C2A /* InternalConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = F2508C7E1F7DA74400BD4C2A /* InternalConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2508C811F7DA74400BD4C2A /* InternalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F2508C7F1F7DA74400BD4C2A /* InternalConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,17 +69,7 @@
 		D8F2C3481F7B9D9900799E6A /* MKDropdownMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKDropdownMenu.h; sourceTree = "<group>"; };
 		D8F2C34F1F7B9D9900799E6A /* NADropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NADropdownMenu.swift; sourceTree = "<group>"; };
 		D8F2C3631F7B9E8400799E6A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		D8F7376E1F7D8057005835E6 /* InternalNavigationTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternalNavigationTitle.h; sourceTree = "<group>"; };
-		D8F7376F1F7D8057005835E6 /* InternalNavigationTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InternalNavigationTitle.m; sourceTree = "<group>"; };
-		D8F737721F7D806C005835E6 /* InternalTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternalTitle.h; sourceTree = "<group>"; };
-		D8F737731F7D806C005835E6 /* InternalTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InternalTitle.m; sourceTree = "<group>"; };
-		D8F737761F7D8078005835E6 /* InternalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternalCell.h; sourceTree = "<group>"; };
-		D8F737771F7D8078005835E6 /* InternalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InternalCell.m; sourceTree = "<group>"; };
-		D8F7377A1F7D8086005835E6 /* InternalButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternalButton.h; sourceTree = "<group>"; };
-		D8F7377B1F7D8086005835E6 /* InternalButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InternalButton.m; sourceTree = "<group>"; };
 		F2508C7C1F7DA50D00BD4C2A /* DropdownConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownConfig.swift; sourceTree = "<group>"; };
-		F2508C7E1F7DA74400BD4C2A /* InternalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternalConfig.h; sourceTree = "<group>"; };
-		F2508C7F1F7DA74400BD4C2A /* InternalConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InternalConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				D8F7376C1F7D800E005835E6 /* External */,
-				D8F7376D1F7D8016005835E6 /* Internal */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,23 +208,6 @@
 			path = External;
 			sourceTree = "<group>";
 		};
-		D8F7376D1F7D8016005835E6 /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				D8F7376E1F7D8057005835E6 /* InternalNavigationTitle.h */,
-				D8F7376F1F7D8057005835E6 /* InternalNavigationTitle.m */,
-				D8F737721F7D806C005835E6 /* InternalTitle.h */,
-				D8F737731F7D806C005835E6 /* InternalTitle.m */,
-				D8F737761F7D8078005835E6 /* InternalCell.h */,
-				D8F737771F7D8078005835E6 /* InternalCell.m */,
-				D8F7377A1F7D8086005835E6 /* InternalButton.h */,
-				D8F7377B1F7D8086005835E6 /* InternalButton.m */,
-				F2508C7E1F7DA74400BD4C2A /* InternalConfig.h */,
-				F2508C7F1F7DA74400BD4C2A /* InternalConfig.m */,
-			);
-			path = Internal;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -255,11 +217,6 @@
 			files = (
 				D8F2C3551F7B9E0100799E6A /* UIColor+MKDropdownMenu.h in Headers */,
 				D8F2C35C1F7B9E2000799E6A /* MKDropdownMenu.h in Headers */,
-				D8F7377C1F7D8086005835E6 /* InternalButton.h in Headers */,
-				D8F737741F7D806C005835E6 /* InternalTitle.h in Headers */,
-				D8F737781F7D8078005835E6 /* InternalCell.h in Headers */,
-				D8F737701F7D8057005835E6 /* InternalNavigationTitle.h in Headers */,
-				F2508C801F7DA74400BD4C2A /* InternalConfig.h in Headers */,
 				D836BD481F7B9D2F00D64376 /* NADropdownMenuFramework.h in Headers */,
 				D8F2C3641F7B9E8700799E6A /* PrefixHeader.pch in Headers */,
 				D873D98D1F7CDBFF002135B2 /* DropdownButtonFooterView.h in Headers */,
@@ -344,14 +301,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8F737791F7D8078005835E6 /* InternalCell.m in Sources */,
 				F2508C7D1F7DA50D00BD4C2A /* DropdownConfig.swift in Sources */,
-				D8F737751F7D806C005835E6 /* InternalTitle.m in Sources */,
-				D8F7377D1F7D8086005835E6 /* InternalButton.m in Sources */,
-				D8F737711F7D8057005835E6 /* InternalNavigationTitle.m in Sources */,
 				D8F2C3501F7B9D9900799E6A /* NADropdownMenu.swift in Sources */,
 				D8F2C3511F7B9DED00799E6A /* MKDropdownMenuTableViewCell.m in Sources */,
-				F2508C811F7DA74400BD4C2A /* InternalConfig.m in Sources */,
 				D810E6B71F7BB8A30042CB5B /* DropdownCell.swift in Sources */,
 				D83DCCB51F7BDC6800889C94 /* TitleSubtitleSelectableCell.m in Sources */,
 				D83DCCBB1F7BE58100889C94 /* DropdownTitleHeaderView.m in Sources */,
@@ -508,7 +460,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64 i386 x86_64";
 			};
@@ -537,7 +489,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64 i386 x86_64";
 			};

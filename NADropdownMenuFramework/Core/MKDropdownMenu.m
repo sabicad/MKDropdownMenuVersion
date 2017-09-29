@@ -29,6 +29,8 @@
 #import "MKDropdownMenuTableViewCell.h"
 #import "UIColor+MKDropdownMenu.h"
 
+#import "NADropdownMenuFramework/NADropdownMenuFramework-Swift.h"
+
 #pragma mark - Constants -
 
 static const NSTimeInterval kAnimationDuration = 0.25;
@@ -721,19 +723,19 @@ static NSString * const kCellIdentifier = @"cell";
     return MAX(0, maxRows);
 }
 
-- (InternalTitle *)getTitleModel {
+- (DropdownTitle *)getTitleModel {
     return _internalTitle;
 }
 
-- (NSMutableArray<InternalCell *> *)getCellsModel {
+- (NSArray<DropdownCell *> *)getCellsModel {
     return _internalCells;
 }
 
-- (InternalButton *)getButtonModel {
+- (DropdownButton *)getButtonModel {
     return _internalButton;
 }
 
-- (InternalConfig *)getConfigModel {
+- (DropdownConfig *)getConfigModel {
     return _internalConfig;
 }
 

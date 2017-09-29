@@ -6,6 +6,10 @@
 //
 
 @class MKDropdownMenuContentViewController;
+@class DropdownTitle;
+@class DropdownCell;
+@class DropdownButton;
+@class DropdownConfig;
 
 @protocol MKDropdownMenuContentViewControllerDelegate <NSObject>
 
@@ -15,10 +19,10 @@
 - (void)didDeselectRow:(NSInteger)row;
 - (void)willDisappear;
 - (void)cancelButtonAction;
-- (InternalTitle *)getTitleModel;
-- (NSMutableArray<InternalCell *> *)getCellsModel;
-- (InternalButton *)getButtonModel;
-- (InternalConfig *)getConfigModel;
+- (DropdownTitle *)getTitleModel;
+- (NSMutableArray<DropdownCell *> *)getCellsModel;
+- (DropdownButton *)getButtonModel;
+- (DropdownConfig *)getConfigModel;
 
 @end
 

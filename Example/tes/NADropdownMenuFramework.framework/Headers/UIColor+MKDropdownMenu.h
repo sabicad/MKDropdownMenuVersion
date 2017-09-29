@@ -13,4 +13,3 @@
 + (UIColor *)appSeparato;
 
 @end
-

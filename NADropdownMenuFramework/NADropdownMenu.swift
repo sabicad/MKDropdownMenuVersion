@@ -79,47 +79,10 @@ public class NADropdownMenu: NSObject {
     fileprivate var config: DropdownConfig
     
     fileprivate func fillDropdownModels() {
-    //Info: can't find how to use Swift classes in Objective-c in this framework.
-    //Tha't why created internal classes and here pass data from external class to internal class.
-        
-        let intTitle = InternalTitle()
-        intTitle.title = titleModel.title
-        intTitle.titleFont = titleModel.titleFont
-        intTitle.titleColor = titleModel.titleColor
-        dropdownMenu.internalTitle = intTitle
-        
-        dropdownMenu.internalCells = []
-        for cell in cellsData {
-            let internalCell = InternalCell()
-            internalCell.title = cell.title
-            internalCell.titleFont = cell.titleFont
-            internalCell.titleColor = cell.titleColor
-            internalCell.descriptionText = cell.descriptionText
-            internalCell.descriptionFont = cell.descriptionFont
-            internalCell.descriptionColor = cell.descriptionColor
-            internalCell.image = cell.image
-            internalCell.tapHandler = cell.tapHandler
-            internalCell.isSelected = cell.isSelected
-            dropdownMenu.internalCells.add(internalCell)
-        }
-        
-        let intButton = InternalButton()
-        intButton.title = button.title
-        intButton.titleFont = button.titleFont
-        intButton.titleColor = button.titleColor
-        intButton.tapHandler = button.buttonHandler
-        dropdownMenu.internalButton = intButton
-        
-        let intConfig = InternalConfig()
-        intConfig.navTitleBackgroundColor = config.navTitleBackgroundColor
-        intConfig.titleBackgroundColor = config.titleBackgroundColor
-        intConfig.cellsBackgroundColor = config.cellsBackgroundColor
-        intConfig.cellsSeparatorColor = config.cellsSeparatorColor
-        intConfig.footerBackgroundColor = config.footerBackgroundColor
-        intConfig.titleHeight = config.titleHeight
-        intConfig.cellsHeight = config.cellsHeight
-        intConfig.footerHeight = config.footerHeight
-        dropdownMenu.internalConfig = intConfig
+        dropdownMenu.internalTitle = titleModel
+        dropdownMenu.internalCells = cellsData
+        dropdownMenu.internalButton = button
+        dropdownMenu.internalConfig = config
     }
 }
 
@@ -139,7 +102,7 @@ extension NADropdownMenu: MKDropdownMenuDataSource {
 
 extension NADropdownMenu: MKDropdownMenuDelegate {
     public func dropdownMenu(_ dropdownMenu: MKDropdownMenu, attributedTitleForComponent component: Int) -> NSAttributedString? {
-        return NSAttributedString(string: navigationModel.navigationBarTitle, attributes: [NSAttributedStringKey.foregroundColor: navigationModel.navigationBarTitleColor])
+        return NSAttributedString(string: navigationModel.navigationBarTitle, attributes: [NSForegroundColorAttributeName: navigationModel.navigationBarTitleColor])
     }
     
     public func dropdownMenu(_ dropdownMenu: MKDropdownMenu, didSelectRow row: Int, inComponent component: Int) {
