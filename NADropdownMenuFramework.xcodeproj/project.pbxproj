@@ -11,12 +11,7 @@
 		D810E6B51F7BB88E0042CB5B /* DropdownTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810E6B41F7BB88E0042CB5B /* DropdownTitle.swift */; };
 		D810E6B71F7BB8A30042CB5B /* DropdownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810E6B61F7BB8A30042CB5B /* DropdownCell.swift */; };
 		D810E6B91F7BB8C30042CB5B /* DropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810E6B81F7BB8C30042CB5B /* DropdownButton.swift */; };
-		D810E6BF1F7BC6A80042CB5B /* NADropdownMenu.swift in Headers */ = {isa = PBXBuildFile; fileRef = D8F2C34F1F7B9D9900799E6A /* NADropdownMenu.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		D836BD481F7B9D2F00D64376 /* NADropdownMenuFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = D836BD461F7B9D2F00D64376 /* NADropdownMenuFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D83DCC7D1F7BCB9D00889C94 /* DropdownNavigationTitle.swift in Headers */ = {isa = PBXBuildFile; fileRef = D810E6B21F7BB7FE0042CB5B /* DropdownNavigationTitle.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		D83DCC7E1F7BCB9D00889C94 /* DropdownTitle.swift in Headers */ = {isa = PBXBuildFile; fileRef = D810E6B41F7BB88E0042CB5B /* DropdownTitle.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		D83DCC7F1F7BCB9D00889C94 /* DropdownCell.swift in Headers */ = {isa = PBXBuildFile; fileRef = D810E6B61F7BB8A30042CB5B /* DropdownCell.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		D83DCC801F7BCB9D00889C94 /* DropdownButton.swift in Headers */ = {isa = PBXBuildFile; fileRef = D810E6B81F7BB8C30042CB5B /* DropdownButton.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		D83DCCB41F7BDC6800889C94 /* TitleSubtitleSelectableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D83DCCB11F7BDC6800889C94 /* TitleSubtitleSelectableCell.h */; };
 		D83DCCB51F7BDC6800889C94 /* TitleSubtitleSelectableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DCCB21F7BDC6800889C94 /* TitleSubtitleSelectableCell.m */; };
 		D83DCCB61F7BDC6800889C94 /* TitleSubtitleSelectableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DCCB31F7BDC6800889C94 /* TitleSubtitleSelectableCell.xib */; };
@@ -39,7 +34,7 @@
 		D8F2C35B1F7B9E1B00799E6A /* MKDropdownMenuTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C3471F7B9D9900799E6A /* MKDropdownMenuTransition.m */; };
 		D8F2C35C1F7B9E2000799E6A /* MKDropdownMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F2C3481F7B9D9900799E6A /* MKDropdownMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8F2C35D1F7B9E2300799E6A /* MKDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C3391F7B9D9900799E6A /* MKDropdownMenu.m */; };
-		D8F2C3641F7B9E8700799E6A /* PrefixHeader.pch in Headers */ = {isa = PBXBuildFile; fileRef = D8F2C3631F7B9E8400799E6A /* PrefixHeader.pch */; };
+		D8F2C3641F7B9E8700799E6A /* PrefixHeader.pch in Headers */ = {isa = PBXBuildFile; fileRef = D8F2C3631F7B9E8400799E6A /* PrefixHeader.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8F737701F7D8057005835E6 /* InternalNavigationTitle.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F7376E1F7D8057005835E6 /* InternalNavigationTitle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8F737711F7D8057005835E6 /* InternalNavigationTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F7376F1F7D8057005835E6 /* InternalNavigationTitle.m */; };
 		D8F737741F7D806C005835E6 /* InternalTitle.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F737721F7D806C005835E6 /* InternalTitle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -258,27 +253,22 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D810E6BF1F7BC6A80042CB5B /* NADropdownMenu.swift in Headers */,
 				D8F2C3551F7B9E0100799E6A /* UIColor+MKDropdownMenu.h in Headers */,
 				D8F2C35C1F7B9E2000799E6A /* MKDropdownMenu.h in Headers */,
-				D83DCC7D1F7BCB9D00889C94 /* DropdownNavigationTitle.swift in Headers */,
-				D83DCC7E1F7BCB9D00889C94 /* DropdownTitle.swift in Headers */,
-				D83DCC7F1F7BCB9D00889C94 /* DropdownCell.swift in Headers */,
-				D83DCC801F7BCB9D00889C94 /* DropdownButton.swift in Headers */,
 				D8F7377C1F7D8086005835E6 /* InternalButton.h in Headers */,
 				D8F737741F7D806C005835E6 /* InternalTitle.h in Headers */,
 				D8F737781F7D8078005835E6 /* InternalCell.h in Headers */,
 				D8F737701F7D8057005835E6 /* InternalNavigationTitle.h in Headers */,
 				F2508C801F7DA74400BD4C2A /* InternalConfig.h in Headers */,
 				D836BD481F7B9D2F00D64376 /* NADropdownMenuFramework.h in Headers */,
-				D83DCCBA1F7BE58100889C94 /* DropdownTitleHeaderView.h in Headers */,
-				D8F2C3521F7B9DF000799E6A /* MKDropdownMenuTableViewCell.h in Headers */,
-				D8F2C3561F7B9E0700799E6A /* MKDropdownMenuContentViewController.h in Headers */,
-				D8F2C3591F7B9E1000799E6A /* MKDropdownMenuComponentButton.h in Headers */,
-				D8F2C35A1F7B9E1900799E6A /* MKDropdownMenuTransition.h in Headers */,
-				D873D98D1F7CDBFF002135B2 /* DropdownButtonFooterView.h in Headers */,
-				D83DCCB41F7BDC6800889C94 /* TitleSubtitleSelectableCell.h in Headers */,
 				D8F2C3641F7B9E8700799E6A /* PrefixHeader.pch in Headers */,
+				D873D98D1F7CDBFF002135B2 /* DropdownButtonFooterView.h in Headers */,
+				D8F2C3591F7B9E1000799E6A /* MKDropdownMenuComponentButton.h in Headers */,
+				D83DCCB41F7BDC6800889C94 /* TitleSubtitleSelectableCell.h in Headers */,
+				D83DCCBA1F7BE58100889C94 /* DropdownTitleHeaderView.h in Headers */,
+				D8F2C35A1F7B9E1900799E6A /* MKDropdownMenuTransition.h in Headers */,
+				D8F2C3561F7B9E0700799E6A /* MKDropdownMenuContentViewController.h in Headers */,
+				D8F2C3521F7B9DF000799E6A /* MKDropdownMenuTableViewCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,10 +345,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8F737791F7D8078005835E6 /* InternalCell.m in Sources */,
-				D8F2C3571F7B9E0900799E6A /* MKDropdownMenuContentViewController.m in Sources */,
 				F2508C7D1F7DA50D00BD4C2A /* DropdownConfig.swift in Sources */,
 				D8F737751F7D806C005835E6 /* InternalTitle.m in Sources */,
-				D8F2C3581F7B9E0E00799E6A /* MKDropdownMenuComponentButton.m in Sources */,
 				D8F7377D1F7D8086005835E6 /* InternalButton.m in Sources */,
 				D8F737711F7D8057005835E6 /* InternalNavigationTitle.m in Sources */,
 				D8F2C3501F7B9D9900799E6A /* NADropdownMenu.swift in Sources */,
@@ -368,12 +356,14 @@
 				D83DCCB51F7BDC6800889C94 /* TitleSubtitleSelectableCell.m in Sources */,
 				D83DCCBB1F7BE58100889C94 /* DropdownTitleHeaderView.m in Sources */,
 				D8F2C35D1F7B9E2300799E6A /* MKDropdownMenu.m in Sources */,
-				D8F2C35B1F7B9E1B00799E6A /* MKDropdownMenuTransition.m in Sources */,
 				D873D98C1F7CD956002135B2 /* DropdownButtonFooterView.m in Sources */,
 				D810E6B91F7BB8C30042CB5B /* DropdownButton.swift in Sources */,
 				D810E6B31F7BB7FE0042CB5B /* DropdownNavigationTitle.swift in Sources */,
 				D8F2C3531F7B9DFB00799E6A /* UIColor+MKDropdownMenu.m in Sources */,
 				D810E6B51F7BB88E0042CB5B /* DropdownTitle.swift in Sources */,
+				D8F2C3571F7B9E0900799E6A /* MKDropdownMenuContentViewController.m in Sources */,
+				D8F2C3581F7B9E0E00799E6A /* MKDropdownMenuComponentButton.m in Sources */,
+				D8F2C35B1F7B9E1B00799E6A /* MKDropdownMenuTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

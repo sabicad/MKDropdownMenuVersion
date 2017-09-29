@@ -16,5 +16,5 @@ FOUNDATION_EXPORT const unsigned char NADropdownMenuFrameworkVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <NADropdownMenuFramework/PublicHeader.h>
 
-#import "UIColor+MKDropdownMenu.h"
-#import "MKDropdownMenu.h"
+#import <NADropdownMenuFramework/UIColor+MKDropdownMenu.h>
+#import <NADropdownMenuFramework/MKDropdownMenu.h>
