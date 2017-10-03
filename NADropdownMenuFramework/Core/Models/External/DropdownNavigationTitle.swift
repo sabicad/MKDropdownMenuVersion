@@ -6,15 +6,15 @@
 //  Copyright © 2017 Netatmo. All rights reserved.
 //
 
-public class DropdownNavigationTitle: NSObject {
-    public let navigationBarTitle: String
-    public let navigationBarIcon: UIImage
-    public let navigationBarTitleFont: UIFont
-    public let navigationBarTitleColor: UIColor
+@objc public class DropdownNavigationTitle: NSObject {
+    @objc public let navigationBarTitle: String
+    @objc public let navigationBarIcon: UIImage
+    @objc public let navigationBarTitleFont: UIFont
+    @objc public let navigationBarTitleColor: UIColor
     
-    public init(navigationBarTitle: String = "", navigationBarIcon: UIImage = UIImage(),
+    @objc public init(navigationBarTitle: String = "", navigationBarIcon: UIImage = UIImage(),
          navigationBarTitleFont: UIFont = UIFont.systemFont(ofSize: 16.0),
-         navigationBarTitleColor: UIColor = UIColor.white, someString: NSString = "") {
+         navigationBarTitleColor: UIColor = UIColor.white) {
         self.navigationBarTitle = navigationBarTitle
         self.navigationBarIcon = navigationBarIcon
         self.navigationBarTitleFont = navigationBarTitleFont

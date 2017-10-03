@@ -6,6 +6,12 @@
 //  Copyright © 2017 Netatmo. All rights reserved.
 //
 
+public protocol NADropdownMenuDelegate: class {
+    func dropdownMenuDelegateDidSelectRow(row: Int)
+    func dropdownMenuDelegateDidOpen()
+    func dropdownMenuDelegateDidClose()
+}
+
 public class NADropdownMenu: NSObject {
     // MARK: - Public
     
@@ -13,7 +19,8 @@ public class NADropdownMenu: NSObject {
     public var useFullScreenWidth: Bool = true
     public var fullScreenInsetLeft: CGFloat = 0
     public var fullScreenInsetRight: CGFloat = 0
-    
+    public weak var delegate: NADropdownMenuDelegate?
+
     public init(navigationModel: DropdownNavigationTitle = DropdownNavigationTitle(),
                 titleModel: DropdownTitle = DropdownTitle(),
                 cellsData: [DropdownCell] = [],
@@ -38,8 +45,8 @@ public class NADropdownMenu: NSObject {
         dropdownMenu.dropdownRoundedCorners = dropdownRoundedCorners
         
         dropdownMenu.useFullScreenWidth = useFullScreenWidth
-        dropdownMenu.fullScreenInsetLeft = config.sideInsects
-        dropdownMenu.fullScreenInsetRight = config.sideInsects
+        dropdownMenu.fullScreenInsetLeft = config.sideInsets
+        dropdownMenu.fullScreenInsetRight = config.sideInsets
         
         dropdownMenu.disclosureIndicatorImage = navigationModel.navigationBarIcon
         
@@ -77,7 +84,7 @@ public class NADropdownMenu: NSObject {
     fileprivate var cellsData: [DropdownCell]
     fileprivate var button: DropdownButton
     fileprivate var config: DropdownConfig
-    
+
     fileprivate func fillDropdownModels() {
         dropdownMenu.internalTitle = titleModel
         dropdownMenu.internalCells = cellsData
@@ -102,11 +109,12 @@ extension NADropdownMenu: MKDropdownMenuDataSource {
 
 extension NADropdownMenu: MKDropdownMenuDelegate {
     public func dropdownMenu(_ dropdownMenu: MKDropdownMenu, attributedTitleForComponent component: Int) -> NSAttributedString? {
-        return NSAttributedString(string: navigationModel.navigationBarTitle, attributes: [NSForegroundColorAttributeName: navigationModel.navigationBarTitleColor])
+        return NSAttributedString(string: navigationModel.navigationBarTitle, attributes: [NSAttributedStringKey.foregroundColor: navigationModel.navigationBarTitleColor])
     }
     
     public func dropdownMenu(_ dropdownMenu: MKDropdownMenu, didSelectRow row: Int, inComponent component: Int) {
         dropdownMenu.selectRow(row, inComponent: component)
+        delegate?.dropdownMenuDelegateDidSelectRow(row: row)
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(150),
                                       execute: {
                                         dropdownMenu.closeAllComponents(animated: true)
@@ -118,10 +126,10 @@ extension NADropdownMenu: MKDropdownMenuDelegate {
     }
     
     public func dropdownMenu(_ dropdownMenu: MKDropdownMenu, didOpenComponent component: Int) {
-        
+        delegate?.dropdownMenuDelegateDidOpen()
     }
     
     public func dropdownMenu(_ dropdownMenu: MKDropdownMenu, didCloseComponent component: Int) {
-        
+        delegate?.dropdownMenuDelegateDidClose()
     }
 }

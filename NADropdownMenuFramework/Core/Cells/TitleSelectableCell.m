@@ -6,9 +6,9 @@
 //  Copyright © 2017 Netatmo. All rights reserved.
 //
 
-#import "TitleSubtitleSelectableCell.h"
+#import "TitleSelectableCell.h"
 
-@implementation TitleSubtitleSelectableCell
+@implementation TitleSelectableCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -17,16 +17,6 @@
 
 - (void)setAttributedTitle:(NSAttributedString *)attributedTitle {
     self.titleTextLabel.attributedText = attributedTitle;
-}
-
-- (void)setAttributedDescription:(NSAttributedString *)attributedDescription {
-    if (attributedDescription.length) {
-        
-    } else {
-        
-    }
-    
-    self.descriptionTextLabel.attributedText = attributedDescription;
 }
 
 - (void)setHighlightColor:(UIColor *)color {

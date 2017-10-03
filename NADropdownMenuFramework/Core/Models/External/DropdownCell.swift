@@ -8,18 +8,18 @@
 
 import UIKit
 
-public class DropdownCell: NSObject {
-    public let title: String
-    public let titleFont: UIFont
-    public let titleColor: UIColor
-    public let descriptionText: String
-    public let descriptionFont: UIFont
-    public let descriptionColor: UIColor
-    public let image: UIImage
-    public var isSelected: Bool
-    public let tapHandler: ButtonHandlerBlock
+@objc public class DropdownCell: NSObject {
+    @objc public let title: String
+    @objc public let titleFont: UIFont
+    @objc public let titleColor: UIColor
+    @objc public let descriptionText: String
+    @objc public let descriptionFont: UIFont
+    @objc public let descriptionColor: UIColor
+    @objc public let image: UIImage
+    @objc public var isSelected: Bool
+    @objc public let tapHandler: ButtonHandlerBlock
     
-    public init(title: String = "", titleFont: UIFont = UIFont.boldSystemFont(ofSize: 16.0),
+    @objc public init(title: String = "", titleFont: UIFont = UIFont.boldSystemFont(ofSize: 16.0),
                 titleColor: UIColor = UIColor.appBlack68(),
                 description: String = "", descriptionFont: UIFont = UIFont.systemFont(ofSize: 14.0), descriptionColor: UIColor = UIColor.appBlack68Alpha30(),
                 image: UIImage = UIImage(), isSelected: Bool = false,

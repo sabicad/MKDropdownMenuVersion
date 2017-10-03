@@ -11,6 +11,7 @@
 #import "UIColor+MKDropdownMenu.h"
 #import "MKDropdownMenuTableViewCell.h"
 #import "TitleSubtitleSelectableCell.h"
+#import "TitleSelectableCell.h"
 #import "DropdownTitleHeaderView.h"
 #import "DropdownButtonFooterView.h"
 
@@ -99,8 +100,11 @@ static NSString * const kCellIdentifier = @"cell";
     
     NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
     
-    UINib *nib = [UINib nibWithNibName:@"TitleSubtitleSelectableCell" bundle:frameworkBundle];
-    [self.tableView registerNib:nib forCellReuseIdentifier:@"TitleSubtitleSelectableCell"];
+    UINib *nibWithDescriptionCell = [UINib nibWithNibName:@"TitleSubtitleSelectableCell" bundle:frameworkBundle];
+    [self.tableView registerNib:nibWithDescriptionCell forCellReuseIdentifier:@"TitleSubtitleSelectableCell"];
+    
+    UINib *nibTitleCell = [UINib nibWithNibName:@"TitleSelectableCell" bundle:frameworkBundle];
+    [self.tableView registerNib:nibTitleCell forCellReuseIdentifier:@"TitleSelectableCell"];
     
 //    [self.tableView registerClass:[MKDropdownMenuTableViewCell class] forCellReuseIdentifier:kCellIdentifier];
     
@@ -435,10 +439,19 @@ static NSString * const kCellIdentifier = @"cell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TitleSubtitleSelectableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleSubtitleSelectableCell" forIndexPath:indexPath];
-
     DropdownCell *intCell = [self.delegate getCellsModel][indexPath.row];
     
+    if (!intCell.descriptionText || intCell.descriptionText.length == 0) {
+        return [self createTitleCell: indexPath tableView: tableView];
+    } else {
+        return [self createTitleDescriptionCell: indexPath tableView: tableView];
+    }
+}
+
+- (TitleSubtitleSelectableCell *)createTitleDescriptionCell:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
+    TitleSubtitleSelectableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleSubtitleSelectableCell" forIndexPath:indexPath];
+    DropdownCell *intCell = [self.delegate getCellsModel][indexPath.row];
+
     NSAttributedString *attrTitle = nil;
     NSAttributedString *attrDescription = nil;
     
@@ -446,7 +459,7 @@ static NSString * const kCellIdentifier = @"cell";
         NSDictionary *attrTitleDict = @{NSFontAttributeName: intCell.titleFont,
                                         NSForegroundColorAttributeName: intCell.titleColor};
         NSDictionary *attrDescriptionDict = @{NSFontAttributeName: intCell.descriptionFont,
-                                        NSForegroundColorAttributeName: intCell.descriptionColor};
+                                              NSForegroundColorAttributeName: intCell.descriptionColor};
         
         attrTitle = [[NSAttributedString alloc] initWithString:intCell.title attributes:attrTitleDict];
         attrDescription = [[NSAttributedString alloc] initWithString:intCell.descriptionText attributes:attrDescriptionDict];
@@ -454,6 +467,40 @@ static NSString * const kCellIdentifier = @"cell";
     
     [cell setAttributedTitle:attrTitle];
     [cell setAttributedDescription:attrDescription];
+    
+    [cell setHighlightColor:[UIColor clearColor]];
+    cell.backgroundColor = [self.delegate getConfigModel].cellsBackgroundColor;
+    
+    cell.iconImageView.image = intCell.image;
+    cell.iconImageView.hidden = !intCell.isSelected;
+    cell.separator.backgroundColor = [self.delegate getConfigModel].cellsSeparatorColor;
+    cell.tapHandler = intCell.tapHandler;
+    
+    cell.preservesSuperviewLayoutMargins = NO;
+    cell.layoutMargins = UIEdgeInsetsZero;
+    if (indexPath.row == _rowsCount - 1) {
+        cell.separator.hidden = YES;
+    } else {
+        cell.separator.hidden = NO;
+    }
+    
+    return cell;
+}
+
+- (TitleSelectableCell *)createTitleCell:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
+    TitleSelectableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleSelectableCell" forIndexPath:indexPath];
+    DropdownCell *intCell = [self.delegate getCellsModel][indexPath.row];
+
+    NSAttributedString *attrTitle = nil;
+    
+    if (intCell) {
+        NSDictionary *attrTitleDict = @{NSFontAttributeName: intCell.titleFont,
+                                        NSForegroundColorAttributeName: intCell.titleColor};
+    
+        attrTitle = [[NSAttributedString alloc] initWithString:intCell.title attributes:attrTitleDict];
+    }
+    
+    [cell setAttributedTitle:attrTitle];
     
     [cell setHighlightColor:[UIColor clearColor]];
     cell.backgroundColor = [self.delegate getConfigModel].cellsBackgroundColor;

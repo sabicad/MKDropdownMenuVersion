@@ -6,18 +6,18 @@
 //  Copyright © 2017 Netatmo. All rights reserved.
 //
 
-public class DropdownConfig: NSObject {
-    public let navTitleBackgroundColor: UIColor
-    public let titleBackgroundColor: UIColor
-    public let cellsBackgroundColor: UIColor
-    public let cellsSeparatorColor: UIColor
-    public let footerBackgroundColor: UIColor
-    public let titleHeight: CGFloat
-    public let cellsHeight: CGFloat
-    public let footerHeight: CGFloat
-    public let sideInsects: CGFloat
+@objc public class DropdownConfig: NSObject {
+    @objc public let navTitleBackgroundColor: UIColor
+    @objc public let titleBackgroundColor: UIColor
+    @objc public let cellsBackgroundColor: UIColor
+    @objc public let cellsSeparatorColor: UIColor
+    @objc public let footerBackgroundColor: UIColor
+    @objc public let titleHeight: CGFloat
+    @objc public let cellsHeight: CGFloat
+    @objc public let footerHeight: CGFloat
+    @objc public let sideInsets: CGFloat
     
-    public init(navTitleBackgroundColor: UIColor = UIColor.white,
+    @objc public init(navTitleBackgroundColor: UIColor = UIColor.white,
                 titleBackgroundColor: UIColor = UIColor.white,
                 cellsBackgroundColor: UIColor = UIColor.white,
                 cellsSeparatorColor: UIColor = UIColor.appSeparato(),
@@ -25,7 +25,7 @@ public class DropdownConfig: NSObject {
                 titleHeight: CGFloat = 43.0,
                 cellsHeight: CGFloat = 60.0,
                 footerHeight: CGFloat = 58.0,
-                sideInsects: CGFloat = 0) {
+                sideInsets: CGFloat = 0) {
         self.navTitleBackgroundColor = navTitleBackgroundColor
         self.titleBackgroundColor = titleBackgroundColor
         self.cellsBackgroundColor = cellsBackgroundColor
@@ -34,6 +34,6 @@ public class DropdownConfig: NSObject {
         self.titleHeight = titleHeight
         self.cellsHeight = cellsHeight
         self.footerHeight = footerHeight
-        self.sideInsects = sideInsects
+        self.sideInsets = sideInsets
     }
 }
