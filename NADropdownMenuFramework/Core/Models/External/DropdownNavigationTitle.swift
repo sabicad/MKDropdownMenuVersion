@@ -7,10 +7,10 @@
 //
 
 @objc public class DropdownNavigationTitle: NSObject {
-    @objc public let navigationBarTitle: String
-    @objc public let navigationBarIcon: UIImage
-    @objc public let navigationBarTitleFont: UIFont
-    @objc public let navigationBarTitleColor: UIColor
+    @objc public var navigationBarTitle: String
+    @objc public var navigationBarIcon: UIImage
+    @objc public var navigationBarTitleFont: UIFont
+    @objc public var navigationBarTitleColor: UIColor
     
     @objc public init(navigationBarTitle: String = "", navigationBarIcon: UIImage = UIImage(),
          navigationBarTitleFont: UIFont = UIFont.systemFont(ofSize: 16.0),

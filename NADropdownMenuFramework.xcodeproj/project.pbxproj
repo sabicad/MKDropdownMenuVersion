@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8053EE31F84F75F008F2285 /* strip-frameworks.sh in Resources */ = {isa = PBXBuildFile; fileRef = D8053EE21F84F75F008F2285 /* strip-frameworks.sh */; };
 		D810E6B31F7BB7FE0042CB5B /* DropdownNavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810E6B21F7BB7FE0042CB5B /* DropdownNavigationTitle.swift */; };
 		D810E6B51F7BB88E0042CB5B /* DropdownTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810E6B41F7BB88E0042CB5B /* DropdownTitle.swift */; };
 		D810E6B71F7BB8A30042CB5B /* DropdownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810E6B61F7BB8A30042CB5B /* DropdownCell.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D8053EE21F84F75F008F2285 /* strip-frameworks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "strip-frameworks.sh"; sourceTree = "<group>"; };
 		D810E6B21F7BB7FE0042CB5B /* DropdownNavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownNavigationTitle.swift; sourceTree = "<group>"; };
 		D810E6B41F7BB88E0042CB5B /* DropdownTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownTitle.swift; sourceTree = "<group>"; };
 		D810E6B61F7BB8A30042CB5B /* DropdownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownCell.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		D8F2C3651F7B9E8D00799E6A /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				D8053EE21F84F75F008F2285 /* strip-frameworks.sh */,
 				D836BD471F7B9D2F00D64376 /* Info.plist */,
 				D8F2C3631F7B9E8400799E6A /* PrefixHeader.pch */,
 			);
@@ -298,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8053EE31F84F75F008F2285 /* strip-frameworks.sh in Resources */,
 				D83DCCB61F7BDC6800889C94 /* TitleSubtitleSelectableCell.xib in Resources */,
 				D83DCCBD1F7BE59A00889C94 /* DropdownTitleHeaderView.xib in Resources */,
 				D82C99111F83862A001FFF3C /* TitleSelectableCell.xib in Resources */,
@@ -383,7 +387,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -437,7 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NADropdownMenuFramework/NADropdownMenuFramework-Swift.h"
+
 typedef void(^ButtonHandlerBlock)(void);
 
 @interface TitleSelectableCell : UITableViewCell
@@ -19,5 +21,7 @@ typedef void(^ButtonHandlerBlock)(void);
 - (void)setAttributedTitle:(NSAttributedString *)attributedTitle;
 
 - (void)setHighlightColor:(UIColor *)color;
+- (void)fillWithModel:(DropdownCell *)model config:(DropdownConfig *)config hideSeparator:(BOOL)value;
+- (CGFloat)getHeightForWidth:(CGFloat)width;
 
 @end

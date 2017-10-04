@@ -7,10 +7,10 @@
 //
 
 @objc open class DropdownButton: NSObject {
-    @objc public let title: String
-    @objc public let titleFont: UIFont
-    @objc public let titleColor: UIColor
-    @objc public let buttonHandler: (() -> Void)?
+    @objc public var title: String
+    @objc public var titleFont: UIFont
+    @objc public var titleColor: UIColor
+    @objc public var buttonHandler: (() -> Void)?
     
     @objc public init(title: String = "", titleFont: UIFont = UIFont.systemFont(ofSize: 14.0),
                 titleColor: UIColor = UIColor.appBlack68(), buttonHandler: @escaping ButtonHandlerBlock = {}) {

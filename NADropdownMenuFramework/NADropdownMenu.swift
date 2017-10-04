@@ -7,7 +7,6 @@
 //
 
 public protocol NADropdownMenuDelegate: class {
-    func dropdownMenuDelegateDidSelectRow(row: Int)
     func dropdownMenuDelegateDidOpen()
     func dropdownMenuDelegateDidClose()
 }
@@ -45,8 +44,17 @@ public class NADropdownMenu: NSObject {
         dropdownMenu.dropdownRoundedCorners = dropdownRoundedCorners
         
         dropdownMenu.useFullScreenWidth = useFullScreenWidth
-        dropdownMenu.fullScreenInsetLeft = config.sideInsets
-        dropdownMenu.fullScreenInsetRight = config.sideInsets
+        
+        let screenWidth = UIScreen.main.bounds.size.width
+        
+        if config.relativeDropdownWidth > 1 {
+            config.relativeDropdownWidth = 1
+        }
+        
+        let inset = screenWidth - screenWidth * config.relativeDropdownWidth
+        
+        dropdownMenu.fullScreenInsetLeft = inset / 2
+        dropdownMenu.fullScreenInsetRight = inset / 2
         
         dropdownMenu.disclosureIndicatorImage = navigationModel.navigationBarIcon
         
@@ -114,7 +122,6 @@ extension NADropdownMenu: MKDropdownMenuDelegate {
     
     public func dropdownMenu(_ dropdownMenu: MKDropdownMenu, didSelectRow row: Int, inComponent component: Int) {
         dropdownMenu.selectRow(row, inComponent: component)
-        delegate?.dropdownMenuDelegateDidSelectRow(row: row)
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(150),
                                       execute: {
                                         dropdownMenu.closeAllComponents(animated: true)

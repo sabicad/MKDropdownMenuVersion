@@ -350,7 +350,15 @@ static NSString * const kCellIdentifier = @"cell";
     CGFloat footerheight = [self.delegate getConfigModel].footerHeight;
     CGFloat headerheight = [self.delegate getConfigModel].titleHeight;
     
-    return MIN(MAX(self.rowsCount * self.tableView.rowHeight, 0), self.maxHeight) + footerheight + headerheight;
+    CGFloat cellsHeight = 0.0;
+    
+    for (int i = 0; i < [self.delegate getCellsModel].count; i++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        
+        cellsHeight += [self getCellHeight:indexPath];
+    }
+    
+    return MIN(MAX(cellsHeight, 0), self.maxHeight) + footerheight + headerheight;
 }
 
 - (void)setContentInset:(UIEdgeInsets)contentInset {
@@ -452,37 +460,7 @@ static NSString * const kCellIdentifier = @"cell";
     TitleSubtitleSelectableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleSubtitleSelectableCell" forIndexPath:indexPath];
     DropdownCell *intCell = [self.delegate getCellsModel][indexPath.row];
 
-    NSAttributedString *attrTitle = nil;
-    NSAttributedString *attrDescription = nil;
-    
-    if (intCell) {
-        NSDictionary *attrTitleDict = @{NSFontAttributeName: intCell.titleFont,
-                                        NSForegroundColorAttributeName: intCell.titleColor};
-        NSDictionary *attrDescriptionDict = @{NSFontAttributeName: intCell.descriptionFont,
-                                              NSForegroundColorAttributeName: intCell.descriptionColor};
-        
-        attrTitle = [[NSAttributedString alloc] initWithString:intCell.title attributes:attrTitleDict];
-        attrDescription = [[NSAttributedString alloc] initWithString:intCell.descriptionText attributes:attrDescriptionDict];
-    }
-    
-    [cell setAttributedTitle:attrTitle];
-    [cell setAttributedDescription:attrDescription];
-    
-    [cell setHighlightColor:[UIColor clearColor]];
-    cell.backgroundColor = [self.delegate getConfigModel].cellsBackgroundColor;
-    
-    cell.iconImageView.image = intCell.image;
-    cell.iconImageView.hidden = !intCell.isSelected;
-    cell.separator.backgroundColor = [self.delegate getConfigModel].cellsSeparatorColor;
-    cell.tapHandler = intCell.tapHandler;
-    
-    cell.preservesSuperviewLayoutMargins = NO;
-    cell.layoutMargins = UIEdgeInsetsZero;
-    if (indexPath.row == _rowsCount - 1) {
-        cell.separator.hidden = YES;
-    } else {
-        cell.separator.hidden = NO;
-    }
+    [cell fillWithModel:intCell config:[self.delegate getConfigModel] hideSeparator:(indexPath.row == _rowsCount - 1)];
     
     return cell;
 }
@@ -491,32 +469,7 @@ static NSString * const kCellIdentifier = @"cell";
     TitleSelectableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleSelectableCell" forIndexPath:indexPath];
     DropdownCell *intCell = [self.delegate getCellsModel][indexPath.row];
 
-    NSAttributedString *attrTitle = nil;
-    
-    if (intCell) {
-        NSDictionary *attrTitleDict = @{NSFontAttributeName: intCell.titleFont,
-                                        NSForegroundColorAttributeName: intCell.titleColor};
-    
-        attrTitle = [[NSAttributedString alloc] initWithString:intCell.title attributes:attrTitleDict];
-    }
-    
-    [cell setAttributedTitle:attrTitle];
-    
-    [cell setHighlightColor:[UIColor clearColor]];
-    cell.backgroundColor = [self.delegate getConfigModel].cellsBackgroundColor;
-    
-    cell.iconImageView.image = intCell.image;
-    cell.iconImageView.hidden = !intCell.isSelected;
-    cell.separator.backgroundColor = [self.delegate getConfigModel].cellsSeparatorColor;
-    cell.tapHandler = intCell.tapHandler;
-    
-    cell.preservesSuperviewLayoutMargins = NO;
-    cell.layoutMargins = UIEdgeInsetsZero;
-    if (indexPath.row == _rowsCount - 1) {
-        cell.separator.hidden = YES;
-    } else {
-        cell.separator.hidden = NO;
-    }
+    [cell fillWithModel:intCell config:[self.delegate getConfigModel] hideSeparator:(indexPath.row == _rowsCount - 1)];
     
     return cell;
 }
@@ -541,6 +494,38 @@ static NSString * const kCellIdentifier = @"cell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return [self.delegate getConfigModel].footerHeight;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self getCellHeight:indexPath];
+}
+
+- (CGFloat)getCellHeight:(NSIndexPath *)indexPath {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(getCellsModel)]) {
+        NSArray *cellsModels = [self.delegate getCellsModel];
+        
+        if (cellsModels.count > indexPath.row) {
+            DropdownCell *intCell = cellsModels[indexPath.row];
+            
+            if (intCell) {
+                id cell;
+                
+                NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
+                
+                if (!intCell.descriptionText || intCell.descriptionText.length == 0) {
+                    cell = [frameworkBundle loadNibNamed:NSStringFromClass([TitleSelectableCell class]) owner:self options:nil].lastObject;
+                } else {
+                    cell = [frameworkBundle loadNibNamed:NSStringFromClass([TitleSubtitleSelectableCell class]) owner:self options:nil].lastObject;
+                }
+                
+                if ([cell isKindOfClass:[TitleSubtitleSelectableCell class]] || [cell isKindOfClass:[TitleSelectableCell class]]) {
+                    return [cell getHeightForWidth:self.tableView.bounds.size.width];
+                }
+            }
+        }
+    }
+    
+    return 44.0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

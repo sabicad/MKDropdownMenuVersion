@@ -9,15 +9,15 @@
 import UIKit
 
 @objc public class DropdownCell: NSObject {
-    @objc public let title: String
-    @objc public let titleFont: UIFont
-    @objc public let titleColor: UIColor
-    @objc public let descriptionText: String
-    @objc public let descriptionFont: UIFont
-    @objc public let descriptionColor: UIColor
-    @objc public let image: UIImage
+    @objc public var title: String
+    @objc public var titleFont: UIFont
+    @objc public var titleColor: UIColor
+    @objc public var descriptionText: String
+    @objc public var descriptionFont: UIFont
+    @objc public var descriptionColor: UIColor
+    @objc public var image: UIImage
     @objc public var isSelected: Bool
-    @objc public let tapHandler: ButtonHandlerBlock
+    @objc public var tapHandler: ButtonHandlerBlock?
     
     @objc public init(title: String = "", titleFont: UIFont = UIFont.boldSystemFont(ofSize: 16.0),
                 titleColor: UIColor = UIColor.appBlack68(),
